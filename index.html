@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SANITAIRE AL HOUDA II | Matériaux de Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <h1>SANITAIRE AL HOUDA II</h1>
+      <p>Matériaux de construction • Plomberie • Électricité • Peinture • Salle de bain</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Tout pour votre chantier</h2>
+      <p>Qualité • Fiabilité • Service professionnel</p>
+
+      <a href="https://wa.me/212600000000" class="hero-btn" target="_blank">
+        Commander via WhatsApp
+      </a>
+    </div>
+  </section>
+<header class="catalog-header">
+        <h2>Notre Catalogue de Produits</h2>
+        <p>Découvrez notre large gamme de matériaux de haute qualité</p>
+    </header>
+
+    <main class="products-container">
+        <div id="productsGrid" class="products-grid">
+            </div>
+    </main>
+
+    <script>
+        const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQKE5NKxKJAn-E1TPWgMnn4vtX2nOCzFGIK_KjSfxqfY5R5OzJGPyM413vAoLmbkH19qG6dfZaAi2Ud/pub?output=csv';
+        const grid = document.getElementById('productsGrid');
+        const phoneNumber = "212600000000"; // ضع رقمك هنا
+
+        async function fetchProducts() {
+            try {
+                const response = await fetch(sheetURL);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1);
+                
+                grid.innerHTML = ''; 
+
+                rows.forEach(row => {
+                    // معالجة تقسيم الصف مع مراعاة الفواصل المحتملة
+                    const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                    
+                    if (columns.length >= 6) {
+                        const product = {
+                            id: columns[0].replace(/"/g, ""),
+                            cat: columns[1].replace(/"/g, ""),
+                            sub: columns[2].replace(/"/g, ""),
+                            name: columns[3].replace(/"/g, ""),
+                            desc: columns[4].replace(/"/g, ""),
+                            img: columns[5].trim().replace(/"/g, "")
+                        };
+                        displayCard(product);
+                    }
+                });
+            } catch (error) {
+                grid.innerHTML = '<p style="text-align:center;">Erreur lors du chargement des produits...</p>';
+            }
+        }
+
+        function displayCard(p) {
+            const msg = encodeURIComponent(`Bonjour, je souhaite me renseigner sur: ${p.name} (Ref: ${p.id})`);
+            const link = `https://wa.me/${phoneNumber}?text=${msg}`;
+
+            grid.innerHTML += `
+                <div class="product-card">
+                    <img src="${p.img}" alt="${p.name}" class="product-image" onerror="this.src='https://via.placeholder.com/300x200?text=Sanitaire+Al+Houda'">
+                    <div class="product-info">
+                        <span class="product-category">${p.cat}</span>
+                        <h3 class="product-name">${p.name}</h3>
+                        <p class="product-desc">${p.desc}</p>
+                    </div>
+                    <a href="${link}" class="whatsapp-btn" target="_blank">
+                        Commander via WhatsApp
+                    </a>
+                </div>
+            `;
+        }
+
+        fetchProducts();
+    </script>
+</body>
+</html>
+
