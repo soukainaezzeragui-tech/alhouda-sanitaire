@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <header class="hero">
+    <div class="top-bar">
+        <div class="container top-container">
+            <div class="contact-info">
+                <span>📞 +212 600 000 000</span>
+                <span>🕒 Lun–Sam: 8h–20h</span>
+            </div>
+            <div class="social-links">
+                <span>Suivez-nous: FB | IG</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-overlay">
+        <div class="container">
+            <div class="nav-panel">
+                <div class="logo">
+                    <h1>SANITAIRE AL HOUDA <span>II</span></h1>
+                    <p>Matériaux de construction • Plomberie • Électricité • Peinture</p>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" placeholder="Rechercher des produits...">
+                    <button>🔍</button>
+                </div>
+
+                <nav class="menu">
+
+                    <a href="index.html" class="active">Accueil</a>
+                    <a href="Categories.html">Catégories</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#" class="btn-order">Commander</a>
+                </nav>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SANITAIRE AL HOUDA II</title>
+    <link rel="stylesheet" href="Categories.css"> <style>
+        .contact-section { padding: 80px 0; background: #f4f7f6; }
+        .contact-wrapper { 
+            display: grid; 
+            grid-template-columns: 1fr 2fr; 
+            gap: 40px; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .info-card { background: #0056b3; color: #fff; padding: 30px; border-radius: 15px; }
+        .info-card h3 { margin-bottom: 20px; font-size: 24px; }
+        .info-item { display: flex; align-items: center; margin-bottom: 20px; gap: 15px; }
+        
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .btn-send {
+            background: #0056b3;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-send:hover { background: #0056b3; }
+
+        @media (max-width: 768px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-container">
+        
+        <div class="contact-image-wrapper">
+            <img src="images/contact.png" alt="Coordonnées Sanitaire Al Houda II" class="contact-info-img">
+        </div>
+    </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>Nom complet</label>
+                    <input type="text" placeholder="Votre nom...">
+                </div>
+                <div class="form-group">
+                    <label>Email / Téléphone</label>
+                    <input type="text" placeholder="Comment vous joindre...">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Votre demande ou question..."></textarea>
+                </div>
+                <button type="submit" class="btn-send">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
