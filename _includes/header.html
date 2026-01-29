@@ -1,1 +1,410 @@
+<header class="hero">
+  
 
+    <div class="hero-overlay">
+        <div class="container">
+            <div class="nav-panel">
+                <div class="logo">
+                    <h1>SANITAIRE AL HOUDA <span>II</span></h1>
+                    <p>Matériaux de construction • Plomberie • Électricité • Peinture</p>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" placeholder="Rechercher des produits...">
+                    <button>🔍</button>
+                </div>
+
+               <nav class="main-nav">
+          <ul class="menu-level-1">
+            <li><a href="/">Accueil</a></li>
+            
+            <li class="has-mega">
+              <a href="/salle-de-bain/">تجهيزات الحمامات 🛁</a>
+              <div class="mega-content">
+                <div class="column">
+                  <h3>مراحيض (WC)</h3>
+                  <a href="/salle-de-bain/wc-normal">WC عادي</a>
+                  <a href="/salle-de-bain/wc-suspendu">WC معلق</a>
+                </div>
+                <div class="column">
+                  <h3>مغاسل (Lavabos)</h3>
+                  <a href="/salle-de-bain/vasques">مغاسل معلقة</a>
+                  <a href="/salle-de-bain/meubles">مغاسل مع خزانة</a>
+                </div>
+                <div class="column">
+                  <h3>دوش و بانيو</h3>
+                  <a href="/salle-de-bain/cabines">كبائن الدوش</a>
+                  <a href="/salle-de-bain/baignoires">بانيو</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="has-mega">
+              <a href="/plomberie/">السباكة 🚰</a>
+              <div class="mega-content">
+                <div class="column">
+                  <h3>أنابيب و وصلات</h3>
+                  <a href="/plomberie/pvc">PVC</a>
+                  <a href="/plomberie/ppr">PPR</a>
+                </div>
+                <div class="column">
+                  <h3>سخانات المياه</h3>
+                  <a href="/plomberie/chauffe-eau-elec">سخان كهربائي</a>
+                  <a href="/plomberie/chauffe-eau-gaz">سخان غاز</a>
+                </div>
+                <div class="column">
+                  <h3>المضخات</h3>
+                  <a href="/plomberie/pompes">مضخات الماء</a>
+                  <a href="/plomberie/reservoirs">خزانات المياه</a>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="/electricite/">الكهرباء 💡</a></li>
+            <li><a href="/peinture/">الصباغة 🎨</a></li>
+            <li><a href="/outillage/">العدد 🛠️</a></li>
+          </ul>
+        </nav>
+                </nav>
+            </div>
+             <div class="hero-content">
+                <h2>Votre partenaire de confiance pour tous vos travaux</h2>
+                <p>Qualité supérieure et prix imbattables à votre service.</p>
+                <a href="#" class="cta-button">Découvrir nos produits</a>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<script>
+document.querySelectorAll('.menu a').forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
+
+</script>
+<style>
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+:root {
+    --primary-color: #0056b3; 
+    --accent-color: #ffc107;  
+    --dark-bg: #333;
+    --white: #ffffff;
+}
+
+body {
+    line-height: 1.6;
+}
+.container {
+    max-width: 99%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ================================
+صورة تاع محل
+
+
+   
+================================ */
+.hero {
+   
+    min-height: 80vh;
+    height: auto;
+
+
+    background: url("images/store.jpg") center/cover no-repeat;
+
+    position: relative;
+}
+
+
+
+.nav-panel {
+    background: rgba(255, 255, 255, 0.85); 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 15px 20px;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+}
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.logo p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* مربع البحث */
+.search-box {
+    display: flex;
+    flex: 1;
+    margin: 0 20px;
+    max-width: 400px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* القائمة */
+.menu a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    color: var(--primary-color);
+}
+
+.btn-order {
+    background: var(--accent-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: #000 !important;
+}
+
+.btn-order:hover {
+    background: #e6af06;
+}
+
+/* محتوى وسط الصفحة */
+.hero-content {
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* تحسين للهواتف */
+@media (max-width: 768px) {
+    .nav-panel {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .search-box {
+        margin: 10px 0;
+    }
+    .hero-content h2 {
+        font-size: 28px;
+    }
+}
+/* 1. تحسين انسيابية الصفحة */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. تأثير ظهور تدريجي للمحتوى (Fade In) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out; /* تطبيق التأثير على نص الوسط */
+}
+
+/* 3. تحسين التفاعل مع الروابط */
+.menu a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* 4. تعديل بسيط على زر الطلب ليبرز أكثر */
+.btn-order {
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+
+.btn-order:hover {
+    background: transparent !important;
+    border-color: var(--accent-color);
+    color: var(--accent-color) !important;
+}
+
+/* 5. تحسين عرض البحث في الهواتف */
+@media (max-width: 768px) {
+    .nav-panel {
+        width: 95%;
+        margin: 10px auto;
+    }
+    
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .menu a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+}
+/* --- تعديلات أساسية لعمل المنيو بشكل صحيح --- */
+
+.nav-panel {
+    position: relative; /* لضمان ظهور القائمة المنسدلة بالنسبة لهذا الشريط */
+    z-index: 1000;
+}
+
+.menu-level-1 {
+    display: flex;
+    list-style: none;
+    direction: rtl; /* اتجاه القائمة من اليمين لليسار */
+}
+
+.menu-level-1 > li {
+    position: static; /* هذا ضروري لجعل الميجا منيو تأخذ عرض الشريط كاملاً */
+}
+
+.menu-level-1 > li > a {
+    color: #333;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+
+/* --- تصميم الـ Mega Content --- */
+.mega-content {
+    position: absolute;
+    top: 100%; /* تظهر تحت الشريط مباشرة */
+    left: 0;
+    right: 0;
+    width: 100vw; /* عرض الشاشة بالكامل */
+    background: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* تقسيمها لـ 4 أعمدة */
+    padding: 30px 10% ; /* هوامش داخلية */
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s all ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.has-mega:hover .mega-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.column h3 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.column a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: 0.2s;
+}
+
+.column a:hover {
+    color: var(--accent-color);
+    padding-right: 5px;
+}
+</style>
