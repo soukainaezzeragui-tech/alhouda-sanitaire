@@ -68,5 +68,6 @@ function displayCategories(rows) {
         nav.appendChild(item);
     });
 }
-
+// أضف هذا السطر في نهاية ملف الـ JS الخاص بك
+document.addEventListener('DOMContentLoaded', loadCategorizedProducts);
 fetchData();
